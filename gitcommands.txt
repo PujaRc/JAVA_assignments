@@ -1,0 +1,19 @@
+Install Git for your OS, open Bash (Git command line) and do the following
+
+git config --global user.name "your username"
+git config --global user.email "your github email-id"
+go to the directory where you have your files saved
+($cd C:/Users/yjpuj/JAVA_files)
+go to github and copy the https path of the repo 
+($git clone https://github.com/PujaRc/JAVA_assignments.git)
+after cloning, go to the folder where JAVA files are saved and paste them in the repository folder
+it is recommended to make new folders inside the repo folder before committing
+check git status
+git add .
+git commit -m "commit name as you like"
+check git status (your wish)
+git push origin main
+git status (your wish)
+
+
+
