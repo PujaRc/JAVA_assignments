@@ -6,7 +6,7 @@ public class Sample
 
 		String DNA = "A TCG  CGTA  TGCAATGCTGCTCG  AAAA GCGCGATGC", pat = "TGC", DNA_C;
 		char[] dna = {'a', 't', 'c', 'g', 'g', 'a', 't', 'c', 'g', 'g', 'a', 't', 'c', 'g', 'g', 'a', 't', 'c', 'g', 'g'};
-		int N = DNA.length(), n = pat.length(), count = 0, count_g = 0, count_c = 0, sum, A = 0, G = 0, C = 0, T = 0, L = 20;
+		int N = DNA.length(), n = pat.length(), count = 0, count_gap = 0, sum, A = 0, G = 0, C = 0, T = 0, L = 20;
 		float fa, fc, ft, fg, percentage;
 
 		//pattern count in a hard-coded DNA string
@@ -25,10 +25,10 @@ public class Sample
 
 		for (int i = 0; i < N; i++){
 			if (DNA.charAt(i) == ' ')
-				count_g += 1;
+				count_gap += 1;
 		}
 
-		System.out.println(count_g);
+		System.out.println(count_gap);
 
 		System.out.println("\n");
 
@@ -51,8 +51,6 @@ public class Sample
 		 System.out.println("\n");
 
 		 //computing the GC percentage
-
-		count_g = 0;
 
 		for (int i = 0; i < L; i++){
 			if (dna[i] == 'a')
@@ -78,11 +76,13 @@ public class Sample
 
 		 //calculating the GC percentage
 
+		G = 0;
+		C = 0;
 		for (int i = 0; i < L; i++){
 			if (dna[i] == 'c')
-				count_c += 1;
+				C += 1;
 			else if (dna[i] == 'g')
-				count_g += 1;
+				G += 1;
 			else 
 				System.out.println("");
 		}
@@ -90,7 +90,7 @@ public class Sample
 		//System.out.println("G: " +count_g);
 		//System.out.println("C: " +count_c);
 
-		sum = count_c + count_g;
+		sum = C + G;
 		//System.out.println("sum: " +sum);
 		percentage = ((float)sum/L)*100;
 		System.out.println("The GC percentage is: " +percentage);
@@ -99,4 +99,4 @@ public class Sample
 		//re-initialize count_g, otherwise it will store the value from the previous count and add up
 		//facing float value iaccuracy
 	}
-}
+}	
