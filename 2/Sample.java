@@ -50,7 +50,7 @@ public class Sample
 		 System.out.println("COMPLEMENTARY sequence: " + DNA_C);
 		 System.out.println("\n");
 
-		 //computing the GC percentage
+		 //computing the percentage of each base
 
 		for (int i = 0; i < L; i++){
 			if (dna[i] == 'a')
